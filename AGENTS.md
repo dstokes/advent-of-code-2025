@@ -16,6 +16,7 @@
 - Use 4-space indentation for Python and idiomatic defaults for other languages.
 - Name primary solution files predictably (`solve.<ext>` or `dayNN.<ext>`). Name helpers after their role (`parser.ts`, `dial.rs`).
 - Keep inputs as data only—do not hard-code personal answers in source.
+- Add comments to function definitions describing their logic and implementation.
 
 ## Testing Guidelines
 - Derive tests from the examples in `puzzle.txt`; add `sample.txt` fixtures if they reduce noise.
