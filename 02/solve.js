@@ -1,12 +1,6 @@
 "use strict";
 
-const fs = require("fs");
-const path = require("path");
-
-// Load a file and trim trailing whitespace.
-function loadInput(filePath) {
-    return fs.readFileSync(filePath, "utf8").trim();
-}
+const { loadInput } = require("../util/input");
 
 // Parse comma-separated ranges like "11-22" into {start, end} BigInt objects.
 function parseRanges(raw) {
@@ -158,8 +152,7 @@ function sumRepeatedIdsAtLeastTwice(ranges) {
 }
 
 function main() {
-    const inputPath = process.argv[2] || path.join(__dirname, "input.txt");
-    const raw = loadInput(inputPath);
+    const raw = loadInput(process.argv[2]);
     const ranges = parseRanges(raw);
     const part1 = sumRepeatedIds(ranges);
     const part2 = sumRepeatedIdsAtLeastTwice(ranges);

@@ -3,13 +3,11 @@
 ## Project Structure & Module Organization
 - Each puzzle day lives in its own two-digit folder (e.g., `01`, `02`), containing the solution, tests, and inputs for that day.
 - Required files per day: `puzzle.txt` (problem text), `input.txt` (personal input). Add `sample.txt` for example inputs if useful.
-- Place solutions alongside inputs with predictable names such as `solve.py`, `dayNN.ts`, or `main.rs`; put helpers in the same folder or a small `lib/` subfolder.
-- Keep tests next to solutions (`test_solve.py`, `day01.test.ts`) so fixtures and logic stay co-located.
+- Place solutions alongside inputs with predictable names such as `solve.js`; put helpers in util/ in the project root.
+- Keep tests next to solutions (`solve.test.js`) so fixtures and logic stay co-located.
 
 ## Build, Test, and Development Commands
-- Run solutions from the day directory. Examples: `python solve.py input.txt`, `node solve.mjs input.txt`, or language-specific equivalents.
-- Run tests per day from that folder. Examples: `pytest -q` for Python tests; `npm test` if a `package.json` exists; `cargo test` for Rust.
-- Add per-day tooling only when needed. Document any day-specific setup in a short `README.md` inside that folder.
+- Write test files using node:test and node:assert within each day directory
 
 ## Coding Style & Naming Conventions
 - Prefer clear, pure functions; keep I/O at the entry point (`if __name__ == "__main__":` in Python, `main()` in Rust, etc.).

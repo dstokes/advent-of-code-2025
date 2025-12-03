@@ -1,17 +1,10 @@
 "use strict";
 
-const fs = require("fs");
-const path = require("path");
+const { loadInput } = require("../util/input");
 
 const DIAL_SIZE = 100; // numbers 0-99
-const inputPath = process.argv[2] || path.join(__dirname, "input.txt");
-
-function loadInput(filePath) {
-    return fs.readFileSync(filePath, "utf8").trimEnd();
-}
-
 // Load inputs once so solution modules can reuse them.
-const input = loadInput(inputPath);
+const input = loadInput(process.argv[2]);
 
 /**
  * Parse rotations like "L68" or "R14" into direction and distance parts.
@@ -78,7 +71,7 @@ function runDialWithClicks(rotations, start = 50, modulo = DIAL_SIZE) {
 if (require.main === module) {
     const rotations1 = parseRotations(input);
     const part1 = runDial(rotations1);
-    console.log(`Part 1: input ${inputPath} (${rotations1.length} rotations)`);
+    console.log(`Part 1: ${rotations1.length} rotations`);
     console.log(`  Final pointer: ${part1.pointer}`);
     console.log(`  Times at zero (end of rotation): ${part1.zeroCount}`);
 
